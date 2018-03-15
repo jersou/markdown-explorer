@@ -1,8 +1,5 @@
-[NO-TOC]
 # Markdown Explorer 
 *Easily explore, view and edit markdown documentation of a file tree.*
-
-[TOC]
 
 ## Common use case
 
