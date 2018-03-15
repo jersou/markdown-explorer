@@ -1,0 +1,112 @@
+<!doctype html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <title>Markdown explorer</title>
+    <link rel="stylesheet"
+          href="../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css"/>
+    <link rel="stylesheet"
+          href="../../node_modules/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet"
+          href="../../node_modules/simplemde/dist/simplemde.min.css"/>
+    <link rel="stylesheet" href="./MarkdownExplorer.css">
+    <link rel="stylesheet" href="./../FsTree/FsTree.css">
+    <link rel="stylesheet" href="./../MdPart/MdPart.css">
+    <link rel="stylesheet"
+          href="../../angular-ui-layout-0.0.0/ui-layout.css"/>
+    <link rel="stylesheet"
+          href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet"
+          href="../../node_modules/github-markdown-css/github-markdown.css"/>
+</head>
+
+<body ng-controller="MarkdownExplorerController as vm"
+      ng-class="{'app-loaded': vm.MarkdownExplorerService.ready}">
+
+<div class="text-center loader">
+    <i class="fa fa-spinner fa-spin fa-5x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+</div>
+
+<div class="markdown-explorer-app"
+     ui-layout="{flow : 'column', disableToggle:true}">
+    <div class="tree-part">
+        <div class="btn-part input-group">
+            <div class="input-group-addon btn"
+                 ng-click="vm.showHelp()"
+                 uib-tooltip="Show Markdown Explorer help" tooltip-popup-delay="600"
+                 tooltip-placement="bottom-left">
+                <i class="fa fa-question-circle fa-fw"></i>
+            </div>
+            <div class="input-group-addon"
+                   uib-tooltip="Filter by file content/file name" tooltip-popup-delay="600"
+                   tooltip-placement="bottom-left">
+                <i class="fa fa-search fa-fw"></i>
+            </div>
+            <input class="form-control"
+                   ng-model="vm.MarkdownExplorerService.filterStr"
+                   placeholder="filter"
+                   uib-tooltip="Filter by file content/file name" tooltip-popup-delay="600"
+                   tooltip-placement="bottom"
+                   ng-change="vm.MarkdownExplorerService.filterTree()"
+                   ng-model-options="{ debounce: 10 }">
+            <div class="input-group-addon btn"
+                 uib-tooltip="Clear filter" tooltip-popup-delay="600"
+                 tooltip-placement="bottom"
+                 ng-click="vm.MarkdownExplorerService.filterStr=''; vm.MarkdownExplorerService.filterTree()">
+                <i class="fa fa-trash fa-fw"></i>
+            </div>
+
+            <div class="input-group-addon btn"
+                 ng-class="{'btn-primary': vm.MarkdownExplorerService.filterFolder, 'btn-secondary': !vm.MarkdownExplorerService.filterFolder}"
+                 ng-hide="vm.MarkdownExplorerService.filterContent"
+                 uib-tooltip="filter by folder name" tooltip-popup-delay="600"
+                 tooltip-placement="bottom"
+                 ng-click="vm.toggleIncludeFoldrNameFilter()">
+                <i class="fa fa-folder-o fa-fw"></i>
+            </div>
+
+            <div class="input-group-addon btn"
+                 ng-class="{'btn-primary': vm.MarkdownExplorerService.filterContent}"
+                 uib-tooltip="filter by file content" tooltip-popup-delay="600"
+                 tooltip-placement="bottom"
+                 ng-click="vm.MarkdownExplorerService.filterContent = !vm.MarkdownExplorerService.filterContent; vm.MarkdownExplorerService.filterTree()">
+                <i class="fa fa-file-text fa-fw"></i>
+            </div>
+
+            <div class="input-group-addon btn"
+                 uib-tooltip="Show preferences" tooltip-popup-delay="600"
+                 tooltip-placement="bottom-right"
+                 ng-click="vm.ConfigService.openConfigModal()">
+                <i class="fa fa-cog fa-fw"></i>
+            </div>
+        </div>
+
+        <markdown-explorer-fs-tree fs-tree="vm.MarkdownExplorerService.fsTree"
+                                   tree-path="vm.ConfigService.path"
+                                   file-path="vm.MarkdownExplorerService.filePath"
+                                   is-expand-locked="vm.MarkdownExplorerService.isExpandLocked">
+        </markdown-explorer-fs-tree>
+    </div>
+    <div class="content-part">
+        <markdown-explorer-md-part
+                file-path="vm.MarkdownExplorerService.filePath"
+                path="vm.ConfigService.path"
+                filter-str="vm.MarkdownExplorerService.filterStr">
+        </markdown-explorer-md-part>
+    </div>
+</div>
+
+<script src="../../node_modules/pouchdb/dist/pouchdb.min.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../node_modules/simplemde/dist/simplemde.min.js"></script>
+<script src="../../node_modules/angular/angular.min.js"></script>
+<script src="../../node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+<script src="../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script src="../../angular-ui-layout-0.0.0/ui-layout.js"></script>
+<script src="./MarkdownExplorer.module.js"></script>
+
+</body>
+</html>

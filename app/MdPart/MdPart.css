@@ -1,0 +1,65 @@
+
+.md-file-path {
+    display: inline-block;
+    word-break: break-all;
+}
+
+.highlightedText {
+    background: yellow;
+}
+
+.viewer-editor-part .stretch .ui-layout-container {
+    width: unset;
+    right: 0;
+}
+
+.is-not-save-part {
+    cursor: unset!important;
+}
+
+.viewer-editor-part {
+    height: 100%;
+}
+
+.CodeMirror {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 49px;
+    right: 0;
+    height: initial;
+}
+
+.editor-statusbar {
+    position: absolute;
+    bottom: 0;
+}
+
+.editor-part {
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.viewer-part {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+}
+
+.toggle-mode-part {
+    position: fixed;
+    top: 5px;
+    right: 30px;
+    z-index: 1001;
+    text-align: right;
+}
+
+.hide-button {
+    display: none !important;
+}

@@ -1,0 +1,59 @@
+body {
+    align-items: center;
+    display: flex;
+}
+
+.markdown-explorer-app, body {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.markdown-explorer-app {
+    display: none;
+}
+
+.app-loaded .markdown-explorer-app {
+    display: block;
+}
+
+.loader {
+    width: 100%;
+}
+
+.app-loaded .loader {
+    display: none;
+}
+
+.btn-part .btn {
+    border-radius: 0;
+}
+
+.btn-part.input-group {
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.tree-part {
+    background-color: #a4a4a4;
+}
+
+.content-part {
+}
+
+div.ui-splitbar{
+    z-index: 999;
+}
+
+
+.input-group-addon.btn-primary {
+    color: #fff;
+    background-color: #255884;
+    border-color: #214e76;
+}
+

@@ -1,0 +1,92 @@
+<div class="input-group btn-part">
+    <div class="input-group-addon btn"
+         uib-tooltip="reload folder" tooltip-popup-delay="600"
+         tooltip-placement="bottom-left"
+         ng-click="vm.MarkdownExplorerService.reloadFsTree()">
+        <i class="fa fa-refresh fa-fw"></i>
+    </div>
+    <div class="input-group-addon btn"
+         uib-tooltip="open folder" tooltip-popup-delay="600"
+         tooltip-placement="bottom-left"
+         ng-click="vm.MarkdownExplorerService.openDialogFsTree()">
+        <i class="fa fa-folder-open fa-fw"></i>
+    </div>
+    <input type="text"
+           class="form-control tree-path-input"
+           uib-tooltip="open folder" tooltip-popup-delay="600"
+           tooltip-placement="bottom"
+           ng-model="vm.treePath"
+           readonly
+           ng-click="vm.MarkdownExplorerService.openDialogFsTree()">
+    <div class="input-group-addon"
+         uib-tooltip="FS tree refresh in progess" tooltip-popup-delay="600"
+         tooltip-placement="bottom"
+         ng-show="vm.updatingFsTree">
+        <i class="fa fa-refresh fa-spin fa-fw"></i>
+    </div>
+
+    <div class="input-group-addon btn"
+         uib-tooltip="collapse the tree" tooltip-popup-delay="600"
+         tooltip-placement="bottom"
+         ng-click="vm.collapseAll()">
+        <i class="fa fa-minus fa-fw"></i>
+    </div>
+
+    <div class="input-group-addon btn"
+         uib-tooltip="expand the tree" tooltip-popup-delay="600"
+         tooltip-placement="bottom"
+         ng-click="vm.expandAll()">
+        <i class="fa fa-plus fa-fw"></i>
+    </div>
+
+    <div class="input-group-addon btn"
+         uib-tooltip="keep the tree expanded" tooltip-popup-delay="600"
+         tooltip-placement="bottom-right"
+         ng-class="{'btn-primary': vm.isExpandLocked, 'btn-secondary': !vm.isExpandLocked}"
+         ng-click="vm.isExpandLocked = !vm.isExpandLocked">
+        <i class="fa fa-lock fa-fw"></i>
+    </div>
+</div>
+
+
+<div class="fs-tree-part">
+    <script type="text/ng-template" id="nodes_renderer.html">
+        <div class="tree-node tree-node-content is-folder"
+             ng-if="node.isFolder">
+            <a data-nodrag
+               ng-click="node.expanded = !node.expanded">
+                    <span class="fa fa-fw"
+                          ng-class="{'fa-folder-o': !node.expanded && !vm.isExpandLocked, 'fa-folder-open-o': node.expanded || vm.isExpandLocked }">
+                    </span>
+                {{node.name}}
+            </a>
+        </div>
+
+        <div class="tree-node tree-node-content is-file"
+             ng-if="!node.isFolder"
+             ng-class="{'is-current':node.filePath === vm.filePath}">
+            <a data-nodrag
+               ng-click="vm.MarkdownExplorerService.showMdFile(node.filePath)">
+                <i class="fa fa-file-text-o"></i> {{node.name}}
+            </a>
+        </div>
+
+        <ol class="tree-nodes"
+            ng-model="node.nodes"
+            ng-show="node.expanded || vm.isExpandLocked">
+            <li ng-repeat="node in vm.sortFolder(node.nodes)"
+                class="tree-node"
+                ng-include="'nodes_renderer.html'">
+            </li>
+        </ol>
+    </script>
+
+    <div class="tree-root">
+        <ol class="tree-nodes" ng-model="vm.fsTree.nodes">
+            <li ng-repeat="node in vm.sortFolder(vm.fsTree.nodes)"
+                class="tree-node"
+                ng-include="'nodes_renderer.html'">
+            </li>
+        </ol>
+    </div>
+</div>

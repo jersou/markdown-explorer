@@ -1,0 +1,111 @@
+
+.tree-part {
+    border-right: #bdbaba 2px solid;
+}
+
+.tree-part button {
+    border-radius: 0;
+}
+
+.tree-path-input {
+    cursor: pointer;
+}
+
+.is-folder {
+    cursor: pointer;
+    background-color: #f3e4b0;
+    border-color: #252525;
+}
+
+.is-folder:hover {
+    background-color: #ffce68;
+}
+
+.is-folder:active {
+    background-color: #ff7435;
+}
+
+.is-file {
+    cursor: pointer;
+    background-color: #dfe3ff;
+    border-color: #252525;
+}
+
+.is-file:hover {
+    background-color: #6b9bff;
+}
+
+.is-file:active {
+    background-color: #257fdc;
+}
+
+.is-file.is-current {
+    background-color: #467eff;
+    border-color: #95b5ff;
+}
+
+.is-file.is-current a {
+    color:#ffffff;
+}
+
+.is-file, .is-folder {
+    border-bottom: #717171 1px solid;
+    border-left: #717171 1px solid;
+    border-bottom-left-radius: 6px;
+    border-top: #5f5f5f 1px solid;
+    margin-top: -1px !important;
+}
+
+.is-file a, .is-folder a {
+    padding: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: block;
+    text-align: left;
+    word-break: break-word;
+}
+
+.tree-root .btn {
+    padding: 0 0;
+}
+
+.tree-root {
+    position: absolute;
+    bottom: 0;
+    overflow: auto;
+    top: 68px;
+    right: 0;
+    left: 0;
+    background-color: #fff7ef;
+}
+
+.tree-root a {
+    color: #000;
+}
+.tree-root a:hover {
+   text-decoration: none;
+    color: #000;
+}
+
+.tree-nodes {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.tree-nodes .tree-nodes {
+    padding-left: 20px
+}
+
+.tree-node {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 20px;
+    line-height: 20px
+}
+
+.is-file i {
+    margin-right: 2px;
+}

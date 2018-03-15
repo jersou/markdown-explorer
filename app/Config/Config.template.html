@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Preference</h3>
+</div>
+<div class="modal-body" id="modal-body">
+
+
+
+    <div class="form-group">
+        <label>Ignore folders (comma separated)</label>
+        <input type="text" class="form-control" ng-model="vm.ingoreFolderNames">
+    </div>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" ng-model="vm.removeNumbersAtBeginOfFileNames">
+            Remove numbers at begin of the file/folder names
+        </label>
+    </div>
+
+    <div class="panel panel-default" ng-if="vm.ConfigService.isDebugMode">
+        <div class="panel-heading">Cache</div>
+        <div class="panel-body">
+            <div>
+                <button class="btn btn-danger" ng-click="vm.clearTreeDb()">
+                    <i class="fa fa-trash"></i>
+                </button>
+                FS Trees count : {{vm.treeDbCount}}
+            </div>
+
+            <div>
+                <button class="btn btn-danger" ng-click="vm.clearFileDb()">
+                    <i class="fa fa-trash"></i>
+                </button>
+                Files dicts count : {{vm.fileDbCount}}
+            </div>
+
+            <pre>{{vm.ConfigService.config|json}}</pre>
+        </div>
+    </div>
+
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok()">Close
+    </button>
+</div>

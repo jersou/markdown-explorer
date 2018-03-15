@@ -1,0 +1,40 @@
+<div class="viewer-editor-part" ng-show="vm.filePath"
+     id="viewer-editor-part">
+    <div class="toggle-mode-part">
+
+        <button class="btn btn-danger is-not-save-part" ng-show="!vm.isSave"
+                uib-tooltip="Modification in progress... automatic saving in a few seconds..."
+                tooltip-popup-delay="600"
+                tooltip-placement="bottom">
+            <i class="fa fa-pencil"></i>
+        </button>
+
+        <button class="btn btn-warning"
+                uib-tooltip="Show in folder" tooltip-popup-delay="600"
+                tooltip-placement="bottom"
+                ng-click="vm.MarkdownExplorerService.openMdInFileBrowser()">
+            <i class="fa fa-folder-open fa-fw"></i>
+        </button>
+
+        <button class="btn btn-primary" ng-click="vm.MarkdownExplorerService.goToPreviousMd()"
+                ng-disabled="vm.MarkdownExplorerService.previousStack.length<2">
+            <span><i class="fa fa-arrow-left fa-fw"></i></span>
+        </button>
+        <button class="btn btn-primary" ng-click="vm.MarkdownExplorerService.goToNextMd()"
+                ng-disabled="vm.MarkdownExplorerService.nextStack.length===0">
+            <span><i class="fa fa-arrow-right fa-fw"></i></span>
+        </button>
+
+
+        <button class="btn btn-primary" ng-click="vm.toggleMode()">
+            <span ng-show="vm.editMode"><i class="fa fa-eye"></i></span>
+            <span ng-hide="vm.editMode"><i class="fa fa-pencil"></i></span>
+        </button>
+    </div>
+    <div class="editor-part" ng-show="vm.editMode">
+        <textarea class="height100" id="txt" contenteditable="true"></textarea>
+    </div>
+    <div class="viewer-part markdown-body" ng-hide="vm.editMode"
+         ng-bind-html="vm.html | highlight:vm.filterStr">
+    </div>
+</div>
