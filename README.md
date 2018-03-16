@@ -48,24 +48,24 @@ $ cd markdown-explorer
 $ npm install
 $ npm start
 ```
-or [downdload the app](https://github.com/jersou/markdown-explorer/releases)
+or [download the app](https://github.com/jersou/markdown-explorer/releases)
 
 ## Documentation
 The app documentation is avaible inside the [doc folder](doc/)
 
 ## Credits
 
-This app use lots of open source projects :
+This app use many open source projects :
 
 * [Electron](https://github.com/electron) : to build the cross platform desktop app
 * [SimpleMDE](https://github.com/sparksuite/simplemde-markdown-editor) : to edit md files
 * [ShowdownJS](https://github.com/showdownjs/showdown) : to render md files
 * [showdown-toc](https://github.com/ravisorg/showdown-toc) : to generate table of content
-* more are listed in [Development/Dependencies.md](Development/Dependencies.md) file.
+* more in [Development/Dependencies.md](Development/Dependencies.md) file.
 
 
 ##  Note
-This app is my first Electron app (except very small tests), then it's probably not an good example ;-), it's a quick dev to learn Electron and it would be necessary to refactor the code in the (near) future (but it's functional :-) ).
+This app is my first Electron app (except very small tests), then it's probably not a good example ;-), it's a quick dev to learn Electron and it would be necessary to refactor the code in the (near) future (but it's functional :-) ).
 
 ## Contributor
 Jérémy Soulary
