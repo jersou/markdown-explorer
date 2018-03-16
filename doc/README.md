@@ -56,15 +56,14 @@ or [download the app](https://github.com/jersou/markdown-explorer/releases)
 ## Documentation
 The app documentation is avaible inside the [doc folder](doc/)
 
-## Credits
-
-This app use many open source projects :
+## Stack
 
 * [Electron](https://github.com/electron) : to build the cross platform desktop app
 * [SimpleMDE](https://github.com/sparksuite/simplemde-markdown-editor) : to edit md files
 * [ShowdownJS](https://github.com/showdownjs/showdown) : to render md files
 * [showdown-toc](https://github.com/ravisorg/showdown-toc) : to generate table of content
-* more in [Development/Dependencies.md](Development/Dependencies.md) file.
+* [Github Markdown CSS](https://github.com/sindresorhus/github-markdown-css) : to replicate the GitHub Markdown style
+* and more : [Development/Dependencies.md](Development/Dependencies.md).
 
 
 ##  Note
