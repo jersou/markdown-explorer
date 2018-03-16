@@ -43,8 +43,8 @@ Just drop a folder on the window (or clic on the folder icon on top left) to sho
 
 ## How To Use
 ```
-$ git clone https://github.com/jersou/markdow-explorer
-$ cd markdow-explorer
+$ git clone https://github.com/jersou/markdown-explorer
+$ cd markdown-explorer
 $ npm install
 $ npm start
 ```

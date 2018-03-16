@@ -46,12 +46,12 @@ Just drop a folder on the window (or clic on the folder icon on top left) to sho
 
 ## How To Use
 ```
-$ git clone https://github.com/jersou/markdow-explorer
-$ cd markdow-explorer
+$ git clone https://github.com/jersou/markdown-explorer
+$ cd markdown-explorer
 $ npm install
 $ npm start
 ```
-or [downdload the app](https://github.com/jersou/markdow-explorer/releases/)
+or [downdload the app](https://github.com/jersou/markdown-explorer/releases/)
 
 ## Documentation
 The app documentation is avaible inside the [doc folder](doc/)
