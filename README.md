@@ -48,7 +48,10 @@ $ cd markdown-explorer
 $ npm install
 $ npm start
 ```
-or [download the app](https://github.com/jersou/markdown-explorer/releases)
+
+**or [![](https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/32/download.png) download the app](https://github.com/jersou/markdown-explorer/releases)**
+
+
 
 ## Documentation
 The app documentation is avaible inside the [doc folder](doc/)
@@ -60,14 +63,14 @@ The app documentation is avaible inside the [doc folder](doc/)
 * [ShowdownJS](https://github.com/showdownjs/showdown) : to render md files
 * [showdown-toc](https://github.com/ravisorg/showdown-toc) : to generate table of content
 * [Github Markdown CSS](https://github.com/sindresorhus/github-markdown-css) : to replicate the GitHub Markdown style
-* and more : [Development/Dependencies.md](Development/Dependencies.md).
+* and more : [Development/Dependencies.md](doc/Development/Dependencies.md).
 
 
 ##  Note
 This app is my first Electron app (except very small tests), then it's probably not a good example ;-), it's a quick dev to learn Electron and it would be necessary to refactor the code in the (near) future (but it's functional :-) ).
 
 ## Contributor
-Jérémy Soulary
+Jeremy Soulary
 
 ![](doc/img/icon.png)
 
@@ -75,7 +78,7 @@ Jérémy Soulary
 
 MIT License
 
-Copyright (c) 2018 Jérémy Soulary http://www.soulary.com/
+Copyright (c) 2018 Jeremy Soulary http://www.soulary.com/
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
