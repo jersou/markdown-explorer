@@ -80,13 +80,7 @@ class MdPartController {
 			spellChecker: false,
 			element: document.getElementById('txt'),
 
-			previewRender: (plainText, preview) => {
-				setTimeout(
-					() => (preview.innerHTML = this.getHtml(plainText)),
-					0
-				);
-				return '...';
-			},
+			previewRender: plainText => this.getHtml(plainText),
 
 			toolbar: [
 				{
@@ -231,6 +225,9 @@ class MdPartController {
 	}
 
 	getHtml(text) {
+		if (!this.filePath) {
+			return '';
+		}
 		return this.converter
 				.makeHtml(text)
 				.replace(/^\w*<p>(\[toc\])?<\/p>/, '')
