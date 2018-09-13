@@ -80,6 +80,14 @@ class MdPartController {
 			spellChecker: false,
 			element: document.getElementById('txt'),
 
+			previewRender: (plainText, preview) => {
+				setTimeout(
+					() => (preview.innerHTML = this.getHtml(plainText)),
+					0
+				);
+				return '...';
+			},
+
 			toolbar: [
 				{
 					className: 'fa fa-bold',
@@ -219,16 +227,15 @@ class MdPartController {
 			text = '[toc]\n\n------\n\n' + this.text;
 		}
 
-		this.html =
-			'<div id="top"></div>' +
-			this.converter
+		this.html = '<div id="top"></div>' + this.getHtml(text);
+	}
+
+	getHtml(text) {
+		return this.converter
 				.makeHtml(text)
 				.replace(/^\w*<p>(\[toc\])?<\/p>/, '')
 				.replace(/<img src="(?!https?:\/\/|\.\/)/g, `<img src="./`)
-				.replace(
-					/<img src="\.\//g,
-					`<img src="${this.getParentPath()}/`
-				);
+			.replace(/<img src="\.\//g, `<img src="${this.getParentPath()}/`);
 	}
 
 	getParentPath() {
