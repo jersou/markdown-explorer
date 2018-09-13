@@ -9,7 +9,9 @@
     "serve": "gulp",
     "build": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --all",
     "build-lin64": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --icon=./icon.png --arch=x64 --platform=linux && cp -a ./doc dist/MarkdownExplorer-linux-x64/doc   && cp ./icon.png launchers/MarkdownExplorer.sh dist/MarkdownExplorer-linux-x64/",
-    "build-win64": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --icon=./icon.png --arch=x64 --platform=win32 && cp -a ./doc dist/MarkdownExplorer-windows-x64/doc && cp ./icon.png dist/MarkdownExplorer-linux-x64/"
+    "build-win64": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --icon=./icon.png --arch=x64 --platform=win32 && cp -a ./doc dist/MarkdownExplorer-windows-x64/doc && cp ./icon.png dist/MarkdownExplorer-linux-x64/",
+    "build-lin32": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --icon=./icon.png --arch=x32 --platform=linux && cp -a ./doc dist/MarkdownExplorer-linux-x32/doc   && cp ./icon.png launchers/MarkdownExplorer.sh dist/MarkdownExplorer-linux-x32/",
+    "build-win32": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --icon=./icon.png --arch=x32 --platform=win32 && cp -a ./doc dist/MarkdownExplorer-windows-x32/doc && cp ./icon.png dist/MarkdownExplorer-linux-x32/"
   },
   "devDependencies": {
     "electron": "^1.8.8",
