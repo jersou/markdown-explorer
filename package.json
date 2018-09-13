@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "debug": "electron . --debug-markdown-explorer",
     "serve": "gulp",
     "build": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --all",
     "build-lin64": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --icon=./icon.png --arch=x64 --platform=linux && cp -a ./doc dist/MarkdownExplorer-linux-x64/doc   && cp ./icon.png launchers/MarkdownExplorer.sh dist/MarkdownExplorer-linux-x64/",
