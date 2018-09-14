@@ -14,9 +14,9 @@
     "build-win32": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --icon=./icon.png --arch=ia32 --platform=win32 && cp -a ./doc dist/MarkdownExplorer-win32-ia32/doc && cp ./icon.png dist/MarkdownExplorer-linux-ia32/"
   },
   "devDependencies": {
-    "electron": "^1.8.8",
-    "electron-packager": "^11.0.1",
-    "gulp": "^3.9.1"
+    "electron": "^2.0.9",
+    "electron-packager": "^12.0.2",
+    "gulp": "^4.0.0"
   },
   "dependencies": {
     "angular": "^1.6.9",
