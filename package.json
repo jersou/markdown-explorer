@@ -15,7 +15,7 @@
     "build-win64": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --icon=./icon.png --arch=x64 --platform=win32 && cp -a ./doc dist/MarkdownExplorer-win32-x64/doc && cp ./icon.png dist/MarkdownExplorer-win32-x64/",
     "build-win32": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --icon=./icon.png --arch=ia32 --platform=win32 && cp -a ./doc dist/MarkdownExplorer-win32-ia32/doc && cp ./icon.png dist/MarkdownExplorer-win32-ia32/",
     
-    "build-macos": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --icon=./icon.png --arch=x64 --platform=darwin && cp -a ./doc dist/MarkdownExplorer-darwin-x64/doc && cp ./icon.png dist/MarkdownExplorer-darwin-x64/"
+    "build-macos": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite  --arch=x64 --platform=darwin && cp -a ./doc dist/MarkdownExplorer-darwin-x64/doc && cp ./icon.png dist/MarkdownExplorer-darwin-x64/"
   },
   "devDependencies": {
     "electron": "^2.0.9",
