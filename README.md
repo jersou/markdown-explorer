@@ -31,7 +31,7 @@ Just drop a folder on the window (or clic on the folder icon on top left) to sho
   * previous/next opened md with scroll position
   * relative reference md links
 * Remember last opened tree/file
-* Pass configiguration from command line : set tree/md path to show, and folders to ignore in tree
+* Pass `configiguration` from command line : set `tree/md` path to show, and folders to ignore in tree
 
 ## Screenshots
 
@@ -54,7 +54,7 @@ $ npm start
 
 
 ## Documentation
-The app documentation is avaible inside the [doc folder](doc/)
+The app documentation is available inside the [doc folder](doc/)
 
 ## Stack
 
