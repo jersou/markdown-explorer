@@ -3,11 +3,11 @@
 
 ## Common use case
 
-If your projects documentation is written in Markdown, with md files dispersed throughout your project tree, Mardown Explorer displays md files in a tree structure, and it allows filtering by file name or by file content.
+If your projects documentation is written in Markdown, with md files dispersed throughout your project tree, Markdown Explorer displays md files in a tree structure, and it allows filtering by file name or by file content.
 
 ## Quick start
 
-Just drop a folder on the window (or clic on the folder icon on top left) to show the Markdow documentation of this folder. Then, explore the tree on the left, and toggle view/edit mode on md file with the button on the top right.
+Just drop a folder on the window (or click on the folder icon on top left) to show the Markdown documentation of this folder. Then, explore the tree on the left, and toggle view/edit mode on md file with the button on the top right.
 
 ## Features
 
@@ -27,11 +27,11 @@ Just drop a folder on the window (or clic on the folder icon on top left) to sho
     * Edit md file
     * Automatic save
     * Quick md syntax help
-* Navigate : 
+* Navigate: 
   * previous/next opened md with scroll position
   * relative reference md links
 * Remember last opened tree/file
-* Pass `configiguration` from command line : set `tree/md` path to show, and folders to ignore in tree
+* Pass `configuration` from command line: set `tree/md` path to show, and folders to ignore in tree
 
 ## Screenshots
 
