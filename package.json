@@ -36,7 +36,7 @@
     "lodash": "^4.17.5",
     "popper.js": "^1.12.9",
     "pouchdb": "^6.4.3",
-    "showdown": "^1.8.6",
+    "showdown": "^1.9.1",
     "simplemde": "^1.11.2"
   },
   "repository": "none",
